@@ -1,16 +1,11 @@
-# Sitio Web Personal by josefeliuf 💥
+# josefeliuf.github.io
 
-## Proyectos destacados 📝
+Personal portfolio. Built with HTML and Tailwind CSS. No frameworks, no build step.
 
+## Local development
 
+Open `index.html` in a browser. That's it.
 
-* Proyecto_1:
+## Deployment
 
-
-
-* Proyecto_2:
-
-
-
-
-* Proyecto_3:
+Pushes to `main` deploy automatically via GitHub Pages.

@@ -1,26 +1,794 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi sitio web personal</title>
-  </head>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José Ignacio Feliú Fernández — Software Engineer</title>
+  <meta name="description" content="Software engineer building Atribu (attribution for performance agencies). Previously at SoyMomo — smartwatches, tablets, baby monitors, NLP safety pipelines, and IoT.">
+  <meta name="author" content="José Ignacio Feliú Fernández">
+  <link rel="canonical" href="https://josefeliuf.github.io/">
+  <meta name="theme-color" content="#0a0a0a" id="meta-theme">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="José Ignacio Feliú Fernández — Software Engineer">
+  <meta property="og:description" content="Software engineer building Atribu. Previously at SoyMomo — smartwatches, tablets, NLP safety pipelines, baby monitors, and IoT.">
+  <meta property="og:url" content="https://josefeliuf.github.io/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        fontFamily: {
+          sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          mono: ['JetBrains Mono', 'Fira Code', 'ui-monospace', 'monospace'],
+        },
+      },
+    }
+  </script>
+
   <style>
-    body {
-      height: 100vh;
-      margin: 0;
-      background-color: #37474F;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: sans-serif;
-    }
-    h1 {
-      margin: 0;
-    }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    html.dark { color-scheme: dark; }
+    html:not(.dark) { color-scheme: light; }
+    .dark ::selection { background-color: rgba(255,255,255,0.15); }
+    ::selection { background-color: rgba(0,0,0,0.12); }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 2px; opacity: 0.5; }
+    body { transition: background-color 0.3s, color 0.3s; }
   </style>
-  <body>
-    <h1>¡Hola, mi nombre es José Ignacio Feliú Fernández!</h1>
-  </body>
+</head>
+
+<body class="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans antialiased">
+
+  <main class="max-w-2xl mx-auto px-6">
+
+    <!-- 1. HEADER -->
+    <header class="pt-20 pb-16">
+      <div class="flex justify-between items-start">
+        <div class="min-w-0">
+          <h1 class="text-3xl md:text-4xl font-semibold tracking-tight" style="text-wrap: balance">
+            José Ignacio Feliú Fernández
+          </h1>
+          <p class="mt-3 text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="header.sub">
+            Software engineer. Building products across the full stack &mdash; from
+            on-device ML and embedded firmware to cloud backends and web applications.
+          </p>
+          <nav class="mt-5 flex items-center gap-5 text-sm text-neutral-500 dark:text-neutral-400">
+            <a href="https://github.com/josefeliuf" target="_blank" rel="noopener noreferrer"
+               class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">GitHub</a>
+            <a href="https://linkedin.com/in/josefeliuf" target="_blank" rel="noopener noreferrer"
+               class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">LinkedIn</a>
+            <a href="mailto:josefeliuf@gmail.com"
+               class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">Email</a>
+          </nav>
+        </div>
+        <!-- Toggles -->
+        <div class="flex items-center gap-1.5 shrink-0 ml-4">
+          <button id="lang-toggle" class="px-2 py-1 rounded text-xs font-mono text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" aria-label="Cambiar idioma">
+            ES
+          </button>
+          <button id="theme-toggle" class="p-1.5 rounded-lg text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" aria-label="Toggle theme">
+            <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. NOW -->
+    <section class="pb-16">
+      <h2 class="text-lg font-mono font-semibold mb-4" data-i18n="now.h">Now</h2>
+      <div class="space-y-3 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        <p data-i18n="now.p1">
+          Building <strong class="text-neutral-900 dark:text-neutral-100">Atribu</strong> &mdash; an attribution platform that
+          helps performance agencies understand which ads actually drive revenue. Connecting data
+          from Meta Ads, GoHighLevel, Stripe, and MercadoPago into a single source of truth.
+        </p>
+        <p data-i18n="now.p2">
+          Thinking about multi-touch attribution models, real-time data pipelines, and how to make
+          complex analytics feel simple for agency teams that don&rsquo;t have a data engineer on staff.
+        </p>
+      </div>
+      <p class="mt-4 text-xs text-neutral-400 dark:text-neutral-500 font-mono" data-i18n="now.date">Updated March 2026</p>
+    </section>
+
+    <!-- 3. ATRIBU -->
+    <section class="pb-16">
+      <div class="-mx-6 px-6 py-10 bg-neutral-50 dark:bg-neutral-900/40 rounded-lg border border-neutral-200 dark:border-neutral-800/50">
+        <h2 class="text-lg font-mono font-semibold mb-1">Atribu</h2>
+        <p class="text-sm text-neutral-500 mb-5" data-i18n="atribu.sub">Attribution platform for performance agencies &mdash; built from scratch in one month</p>
+
+        <div class="space-y-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+          <p data-i18n="atribu.problem">
+            Performance agencies run ads across multiple platforms and track conversions through
+            CRMs, payment processors, and landing pages. The problem: there&rsquo;s no unified view
+            of what&rsquo;s actually working. Agencies rely on platform-reported metrics that inflate
+            results, or they build fragile spreadsheets that break every month.
+          </p>
+          <p data-i18n="atribu.pipeline">
+            Atribu connects the full pipeline &mdash; ad spend from
+            <strong class="text-neutral-900 dark:text-neutral-100">Meta Ads</strong> and
+            <strong class="text-neutral-900 dark:text-neutral-100">Google Ads</strong>,
+            leads from <strong class="text-neutral-900 dark:text-neutral-100">GoHighLevel</strong>,
+            payments from <strong class="text-neutral-900 dark:text-neutral-100">Stripe</strong>,
+            <strong class="text-neutral-900 dark:text-neutral-100">MercadoPago</strong>, and
+            <strong class="text-neutral-900 dark:text-neutral-100">Shopify</strong>,
+            organic traffic from <strong class="text-neutral-900 dark:text-neutral-100">Google Search Console</strong>,
+            and brand context from <strong class="text-neutral-900 dark:text-neutral-100">Notion</strong>
+            &mdash; eight integrations with OAuth flows, webhook listeners, and periodic sync.
+          </p>
+        </div>
+
+        <!-- Expand/collapse -->
+        <button id="atribu-toggle" class="mt-6 mb-6 flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors" aria-expanded="false" aria-controls="atribu-details">
+          <svg id="atribu-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span data-i18n="atribu.expand">See technical details</span>
+        </button>
+
+        <div id="atribu-details" class="hidden">
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="atribu.engine.h">Attribution Engine</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="atribu.engine.p">
+            Eight attribution models &mdash; first-touch, last-touch, last non-direct, linear,
+            position-based, time decay, 50/50 split, and custom weighted &mdash; all computed at
+            query time via Postgres RPCs. No pre-stored credits; switch models instantly without
+            reprocessing. Identity stitching links anonymous visitors to known customers across
+            devices. Synthetic touches are created for off-site conversions (e.g., GHL leads
+            arriving via Meta) by matching lead metadata against prior session history.
+          </p>
+        </div>
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2">Tracking SDK</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="atribu.tracker.p">
+            A standalone JavaScript tracker distributed as an IIFE snippet and npm package.
+            30+ auto-capture modules &mdash; page views, form submissions, Stripe checkouts,
+            Shopify purchases, GHL funnel forms, outbound links, video engagement, scroll depth,
+            Web Vitals, and custom events. Events persist to localStorage and batch-send with
+            exponential backoff. Bot filtering, AI agent detection, GDPR consent handling, and
+            SPA navigation tracking out of the box.
+          </p>
+        </div>
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2">Ads Explorer</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="atribu.explorer.p">
+            Scrapes live competitor ads from Meta and TikTok &mdash; creatives, headlines, body
+            copy, media. ML-powered scoring ranks ads by engagement potential. Extracts keyframes
+            and audio from video ads. Feeds directly into the Ads Lab for variation generation.
+          </p>
+        </div>
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2">Ads Lab</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="atribu.lab.p">
+            Multi-agent system for ad creation, built on Vercel AI&rsquo;s ToolLoopAgent.
+            Specialized agents &mdash; coordinator, research, psychology, copywriting, video
+            scripting, compliance, and a critic that triggers retry loops for quality &mdash;
+            orchestrated in a pipeline that produces ad copy, video scripts, and full creative
+            briefs informed by competitor data from the Explorer and brand context from Notion.
+          </p>
+        </div>
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="atribu.analytics.h">Analytics &amp; Reporting</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="atribu.analytics.p">
+            Real-time dashboards with dual-period KPIs, funnel analysis, channel breakdowns,
+            customer journey visualization, and AI-generated insights. Scheduled reports via
+            email, PDF exports, and shareable public links. A public API with 25+ endpoints,
+            rate limiting, and scoped API keys.
+          </p>
+        </div>
+
+        </div><!-- /atribu-details -->
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Next.js 16</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">React 19</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">TypeScript</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Supabase</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Redis</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Vercel AI SDK</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Meta Ads API</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Google Ads API</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Stripe</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Shopify</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">MercadoPago</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">GoHighLevel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SOYMOMO -->
+    <section class="pb-16">
+      <div class="-mx-6 px-6 py-10 bg-neutral-50 dark:bg-neutral-900/40 rounded-lg border border-neutral-200 dark:border-neutral-800/50">
+        <h2 class="text-lg font-mono font-semibold mb-1">SoyMomo</h2>
+        <p class="text-sm text-neutral-500 mb-5" data-i18n="sm.sub">Children&rsquo;s technology &mdash; smartwatches, tablets, baby monitors</p>
+        <div class="space-y-4 text-neutral-700 dark:text-neutral-300 leading-relaxed mb-8">
+          <p data-i18n="sm.intro">
+            SoyMomo builds connected devices for children&rsquo;s safety. I worked across nearly every
+            product line for five years &mdash; smartwatches, tablets, baby monitors, and their
+            cloud backends. Started as an intern doing AOSP research, grew into owning full
+            product verticals.
+          </p>
+          <p data-i18n="sm.intro2">
+            Key projects: created the <strong class="text-neutral-900 dark:text-neutral-100">Space&nbsp;3 smartwatch launcher</strong>
+            and 20+ watch applications; designed a <strong class="text-neutral-900 dark:text-neutral-100">multi-stage NLP pipeline</strong>
+            for detecting cyberbullying and grooming on tablets (my university thesis, deployed in production);
+            built the <strong class="text-neutral-900 dark:text-neutral-100">Baby Monitor Pro&nbsp;3.0</strong>
+            from ESP32 firmware and custom PCB to WebRTC streaming app; deployed a
+            <strong class="text-neutral-900 dark:text-neutral-100">Valhalla server</strong> for GPS route matching
+            with custom clustering algorithms; created the
+            <strong class="text-neutral-900 dark:text-neutral-100">HeyMomo voice assistant</strong>;
+            and built CI/CD, MVNO integration, and tablet system infrastructure.
+          </p>
+        </div>
+
+        <!-- Expand/collapse -->
+        <button id="sm-toggle" class="mb-6 flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors" aria-expanded="false" aria-controls="sm-details">
+          <svg id="sm-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span data-i18n="sm.expand">See technical details</span>
+        </button>
+
+        <div id="sm-details" class="hidden">
+        <!-- Space 3 -->
+        <div class="mb-8">
+          <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="sm.s3.h">Space 3 Smartwatch Platform</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.s3.p1">
+            Created the initial launcher and led development across 20+ applications for
+            SoyMomo&rsquo;s flagship children&rsquo;s smartwatch. Built the chat app, phone dialer,
+            phonebook, camera, gallery, keyboard, settings, step counter, reminders, friends,
+            app store, and authentication manager &mdash; all running on constrained Android
+            hardware with custom system-level behaviors.
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.s3.p2">
+            Developed and integrated an on-device keyword spotting model using MFCC feature
+            extraction, a CNN classifier, and SVDF layers, enabling streaming audio intelligence
+            on the watch while meeting strict latency and power constraints. This work spearheaded
+            the launch of a smartwatch generation that surpassed previous models and boosted
+            SIM-card adoption.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Kotlin</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Android</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">MFCC + CNN + SVDF</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Parse</span>
+          </div>
+        </div>
+
+        <!-- NLP Pipeline -->
+        <div class="mb-8">
+          <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="sm.nlp.h">Dangerous Content Detection &mdash; NLP Pipeline</h3>
+          <p class="text-sm text-neutral-500 mb-2 italic" data-i18n="sm.nlp.thesis">University thesis project, deployed in production</p>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.nlp.p1">
+            Designed and implemented a multi-stage NLP moderation pipeline for SoyMomo&rsquo;s
+            Android tablets to detect cyberbullying, grooming, and explicit content in near
+            real time. The system works in layers:
+          </p>
+          <ul class="text-neutral-600 dark:text-neutral-400 leading-relaxed space-y-2 ml-4 mb-3">
+            <li class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1.5 before:h-1.5 before:bg-neutral-300 dark:before:bg-neutral-700 before:rounded-full">
+              <strong class="text-neutral-800 dark:text-neutral-300">OCR ingestion</strong> <span data-i18n="sm.nlp.ocr">&mdash; replaced accessibility-based text extraction with screenshot-based OCR using Google ML Kit. Periodic capture, deduplication, local persistence, and cleanup workers.</span>
+            </li>
+            <li class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1.5 before:h-1.5 before:bg-neutral-300 dark:before:bg-neutral-700 before:rounded-full">
+              <strong class="text-neutral-800 dark:text-neutral-300">Dictionary models</strong> <span data-i18n="sm.nlp.dict">&mdash; weighted scoring for mood, cyberbullying, and grooming terms with regex patterns, slang expansion, and bilingual coverage.</span>
+            </li>
+            <li class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1.5 before:h-1.5 before:bg-neutral-300 dark:before:bg-neutral-700 before:rounded-full">
+              <strong class="text-neutral-800 dark:text-neutral-300">On-device classifier</strong> <span data-i18n="sm.nlp.model">&mdash; evaluated RoBERTa, DeBERTa, BETO, and RoBERTuito; selected XLM-RoBERTa for multilingual performance. Fine-tuned on 20,000 curated examples, converted to ONNX, and quantized &mdash; reducing memory by 40% and increasing inference speed by 30%.</span>
+            </li>
+            <li class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1.5 before:h-1.5 before:bg-neutral-300 dark:before:bg-neutral-700 before:rounded-full">
+              <strong class="text-neutral-800 dark:text-neutral-300">Rust/JNI tokenizer</strong> <span data-i18n="sm.nlp.rust">&mdash; integrated Hugging Face tokenizers in Rust via JNI for performance-sensitive inference on Android.</span>
+            </li>
+            <li class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1.5 before:h-1.5 before:bg-neutral-300 dark:before:bg-neutral-700 before:rounded-full">
+              <strong class="text-neutral-800 dark:text-neutral-300">Cloud verification</strong> <span data-i18n="sm.nlp.cloud">&mdash; batch processing with GPT-4o using JSONL batches and scheduled backend jobs for second-stage validation.</span>
+            </li>
+            <li class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1.5 before:h-1.5 before:bg-neutral-300 dark:before:bg-neutral-700 before:rounded-full">
+              <strong class="text-neutral-800 dark:text-neutral-300" data-i18n="sm.nlp.alerts.label">Parent-facing alerts</strong> <span data-i18n="sm.nlp.alerts">&mdash; real-time notifications with labels, screenshots, and detailed detection views.</span>
+            </li>
+          </ul>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.nlp.tools">
+            Experiment tracking with MLflow. Model versioning with DVC. The full architecture
+            and evaluation are documented in my university thesis.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">XLM-RoBERTa</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">ONNX Runtime</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Rust / JNI</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">ML Kit OCR</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">GPT-4o</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">MLflow</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">PyTorch</span>
+          </div>
+        </div>
+
+        <!-- Baby Monitor -->
+        <div class="mb-8">
+          <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 mb-2">Baby Monitor Pro 3.0</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.baby.p1">
+            Started and created a next-generation baby monitor from scratch. Designed around an
+            ESP32 with OV2640 camera on a custom PCB, all firmware written in C using
+            Espressif&rsquo;s IDF framework. Real-time audio and video streaming over WebRTC
+            with a privacy-first architecture &mdash; no cloud relay, direct peer-to-peer
+            connections between the monitor and the parent&rsquo;s phone.
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.baby.p2">
+            Built the companion Android application with BLE provisioning and live stream
+            playback. Explored Wi-Fi HaLow (802.11ah) for extended range on sub-1GHz bands
+            using Morse Micro MM8108 modules, including custom kernel module work on
+            Android&nbsp;14 with UNISOC T616 hardware.
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.baby.p3">
+            Also built the cloud backend for audio/video IoT streaming using MQTT, RTMP,
+            NGINX, and AWS, plus infant pose detection and baby cry classification models
+            for smart alerting.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">C</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">ESP-IDF</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">ESP32</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">WebRTC</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Custom PCB</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">BLE</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Wi-Fi HaLow</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">MQTT / RTMP</span>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="mb-8">
+          <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="sm.loc.h">Location History &amp; Route Matching</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.loc.p1">
+            Rebuilt the location history feature for SoyMomo&rsquo;s smartwatches, turning noisy
+            GPS traces from children&rsquo;s devices into clean, meaningful routes. Deployed a
+            self-hosted Valhalla server for map-matching and implemented multiple clustering
+            strategies to find the best route that matches the actual path the child took
+            during the day.
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.loc.p2">
+            Implemented and evaluated ST-DBSCAN (spatio-temporal density clustering), adaptive
+            clustering that adjusts parameters based on GPS data density, stop-detection
+            algorithms for identifying stationary periods, time-windowed clustering, and
+            trajectory simplification. All with weighted centroid calculations based on
+            GPS accuracy. Built a Next.js dashboard for visualizing and comparing experiments
+            across algorithms.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Valhalla</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">ST-DBSCAN</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Map Matching</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Next.js</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Docker</span>
+          </div>
+        </div>
+
+        <!-- HeyMomo -->
+        <div class="mb-8">
+          <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 mb-2">HeyMomo &mdash; Voice &amp; AI Assistant</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.hey.p1">
+            Created a voice assistant for SoyMomo&rsquo;s smart devices using GCP speech-to-text
+            and text-to-speech, enhanced with word2vec, topic modeling, and clustering for
+            better intent understanding. Later evolved into an LLM-powered conversational
+            system backed by Supabase for persistent memory &mdash; the assistant remembers
+            facts about each child (favorite colors, foods, school subjects) and can manage
+            contacts, send messages, and initiate calls.
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.hey.p2">
+            Also developed and published an Android audio recording library on Maven,
+            standardizing device-side audio capture across SoyMomo products and reducing
+            development time for audio features.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">GCP Speech</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">OpenAI</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Supabase</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">word2vec</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Maven</span>
+          </div>
+        </div>
+
+        <!-- Tablet -->
+        <div class="mb-8">
+          <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="sm.tab.h">Tablet Platform &amp; System Engineering</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.tab.p1">
+            Built and maintained core Android functionality for SoyMomo&rsquo;s tablet platform,
+            including system-level services, screenshot and monitoring infrastructure,
+            foreground services, overlay management, MediaProjection, and OEM/system-app
+            deployment. Refactored the tablet application update system with Cloudflare,
+            reducing data transfer costs and improving update efficiency across the
+            production fleet.
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.tab.p2">
+            Also shipped an image detection system using YOLO for identifying inappropriate
+            visual content on the tablets.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Android / AOSP</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">Cloudflare</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">YOLO</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">MediaProjection</span>
+          </div>
+        </div>
+
+        <!-- Infra -->
+        <div>
+          <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 mb-2">SIM Subscriptions, CI/CD &amp; AOSP</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3" data-i18n="sm.infra.p">
+            Led the app-side implementation of SoyMomo&rsquo;s SIM subscription capability,
+            including MVNO investigation, recurring-revenue feature development, and
+            integration with backend systems and SIM providers. Created CI/CD pipelines
+            for most of SoyMomo&rsquo;s Android applications, improving deployment speed
+            and reliability. Earlier on, researched and implemented a basic operating
+            system based on AOSP and improved the architecture of the ad-blocking service.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">AOSP</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">CI/CD</span>
+            <span class="px-2 py-0.5 text-xs font-mono text-neutral-500 bg-neutral-100 dark:bg-neutral-800/40 rounded">MVNO</span>
+          </div>
+        </div>
+        </div><!-- /sm-details -->
+      </div>
+    </section>
+
+    <!-- 5. WORK -->
+    <section class="pb-16">
+      <h2 class="text-lg font-mono font-semibold mb-6" data-i18n="work.h">Work</h2>
+      <div class="space-y-8">
+        <div>
+          <div class="flex flex-wrap items-baseline gap-x-2">
+            <h3 class="text-neutral-900 dark:text-neutral-100 font-medium">Atribu</h3>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+            <span class="text-neutral-600 dark:text-neutral-400 text-sm" data-i18n="work.atribu.role">Technical Co-founder</span>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm font-mono">2026&ndash;present</span>
+          </div>
+          <p class="mt-1.5 text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="work.atribu.desc">
+            Building an attribution platform for performance agencies from scratch.
+            Full-stack &mdash; React/Next.js frontend, integrations with Meta Ads,
+            GoHighLevel, Stripe, MercadoPago, and Notion. Leading all product and
+            engineering as technical co-founder.
+          </p>
+        </div>
+        <div>
+          <div class="flex flex-wrap items-baseline gap-x-2">
+            <h3 class="text-neutral-900 dark:text-neutral-100 font-medium">Connect Marketing</h3>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+            <span class="text-neutral-600 dark:text-neutral-400 text-sm" data-i18n="work.cm.role">CEO &amp; Co-founder</span>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm font-mono">2024&ndash;present</span>
+          </div>
+          <p class="mt-1.5 text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="work.cm.desc">
+            Co-founded a fundraising agency serving foundations as primary clients.
+            Locked multi-year contracts, built the business model and client presentations,
+            and manage weekly client relationships. On the technical side, automated the
+            entire operation &mdash; built a Next.js admin dashboard for commissions,
+            payments, accounting, and tax compliance (SII); a Kotlin Multiplatform mobile
+            app for field salespeople to scan IDs and upload receipts; an OCR pipeline
+            for receipt processing at scale; and financial modeling tools for campaign
+            projections. Reached ~$1M in gross revenue in its first full year. Currently
+            scaled back (operations automated) while focused on Atribu.
+          </p>
+        </div>
+        <div>
+          <div class="flex flex-wrap items-baseline gap-x-2">
+            <h3 class="text-neutral-900 dark:text-neutral-100 font-medium">SoyMomo</h3>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+            <span class="text-neutral-600 dark:text-neutral-400 text-sm">Software Engineer</span>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm font-mono">2021&ndash;2026</span>
+          </div>
+          <p class="mt-1.5 text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="work.sm.desc">
+            Five years across smartwatches, tablets, baby monitors, and cloud services
+            for a children&rsquo;s technology company. Shipped 20+ Android applications for
+            the Space&nbsp;3 watch, built an NLP safety pipeline for content moderation,
+            created a baby monitor from custom hardware to companion app, and led location
+            history, voice assistant, and infrastructure projects. Started as an intern
+            doing AOSP research, grew into owning full product verticals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. EDUCATION -->
+    <section class="pb-16">
+      <h2 class="text-lg font-mono font-semibold mb-6" data-i18n="edu.h">Education</h2>
+      <div class="space-y-8">
+        <div>
+          <div class="flex flex-wrap items-baseline gap-x-2">
+            <h3 class="text-neutral-900 dark:text-neutral-100 font-medium">Pontificia Universidad Cat&oacute;lica de Chile</h3>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm font-mono">2019&ndash;2024</span>
+          </div>
+          <p class="mt-1.5 text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="edu.degree">
+            Ingeniero Civil en Computaci&oacute;n (Computer Engineering). Major in Software Engineering,
+            minor in Data Science &amp; Analytics.
+          </p>
+          <p class="mt-3 text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="edu.thesis">
+            Thesis: NLP pipeline for dangerous content detection on children&rsquo;s tablets &mdash;
+            deployed in production at SoyMomo.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-neutral-900 dark:text-neutral-100 font-medium mb-3" data-i18n="edu.ta.h">Teaching Assistant</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex flex-wrap items-baseline gap-x-2">
+                <span class="text-neutral-700 dark:text-neutral-300 text-sm font-medium" data-i18n="edu.ta.capstone">Capstone Project (Proyecto de Especialidad)</span>
+                <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+                <span class="text-neutral-400 dark:text-neutral-500 text-sm font-mono">2023</span>
+              </div>
+              <p class="mt-1 text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed" data-i18n="edu.ta.capstone.desc">
+                Guided student teams through their capstone projects, providing weekly mentorship
+                on progress and scope. Also taught a module on software testing best practices &mdash;
+                static analysis, monitoring, code review, and CI/CD.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-baseline gap-x-2">
+                <span class="text-neutral-700 dark:text-neutral-300 text-sm font-medium" data-i18n="edu.ta.math">Discrete Mathematics</span>
+                <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+                <span class="text-neutral-400 dark:text-neutral-500 text-sm font-mono">2021</span>
+              </div>
+              <p class="mt-1 text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed" data-i18n="edu.ta.math.desc">
+                Grading assistant for two semesters. Evaluated assignments and exams in
+                combinatorics, graph theory, and formal logic.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. STACK / OPINIONS -->
+    <section class="pb-16">
+      <h2 class="text-lg font-mono font-semibold mb-4" data-i18n="stack.h">How I Build</h2>
+      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6" data-i18n="stack.intro">
+        Opinionated choices, picked through trial and error. I value tools that let me
+        move fast without fighting the framework.
+      </p>
+      <div class="space-y-5 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        <div>
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-1">Frontend</h3>
+          <p class="text-neutral-600 dark:text-neutral-400" data-i18n="stack.fe">
+            <strong class="text-neutral-800 dark:text-neutral-300">React + Next.js + TypeScript.</strong>
+            I&rsquo;ve tried alternatives. I keep coming back. The ecosystem depth, the hiring pool,
+            and the App Router&rsquo;s server component model make it the pragmatic choice for
+            products that need to ship and iterate fast.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-1">Styling</h3>
+          <p class="text-neutral-600 dark:text-neutral-400" data-i18n="stack.css">
+            <strong class="text-neutral-800 dark:text-neutral-300">Tailwind CSS + shadcn/ui.</strong>
+            Utility-first is the right abstraction for UI. No naming debates, no specificity wars,
+            no dead CSS. shadcn/ui gives you real components you own &mdash; not a dependency that
+            breaks on every major version.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-1">Mobile &amp; Embedded</h3>
+          <p class="text-neutral-600 dark:text-neutral-400" data-i18n="stack.mobile">
+            <strong class="text-neutral-800 dark:text-neutral-300">Native Android (Kotlin), C for firmware, Rust where it counts.</strong>
+            After years of system-level Android work on constrained hardware, I default to native
+            over cross-platform. For embedded, ESP-IDF and C give you the control you need.
+            Rust via JNI when you need safe, fast bridging between worlds.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-1">ML on Device</h3>
+          <p class="text-neutral-600 dark:text-neutral-400" data-i18n="stack.ml">
+            <strong class="text-neutral-800 dark:text-neutral-300">PyTorch for training, ONNX for deployment.</strong>
+            Fine-tune in Python, quantize aggressively, run on-device with ONNX Runtime.
+            MLflow for experiment tracking. The model that runs on a kid&rsquo;s tablet needs
+            to be fast and small &mdash; not just accurate.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-1" data-i18n="stack.pay.h">Payments</h3>
+          <p class="text-neutral-600 dark:text-neutral-400" data-i18n="stack.pay">
+            <strong class="text-neutral-800 dark:text-neutral-300">Stripe for international, MercadoPago for LATAM.</strong>
+            You can&rsquo;t serve Latin America with Stripe alone. MercadoPago handles local payment
+            methods that Stripe simply doesn&rsquo;t support.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-1" data-i18n="stack.int.h">Integrations</h3>
+          <p class="text-neutral-600 dark:text-neutral-400" data-i18n="stack.int">
+            <strong class="text-neutral-800 dark:text-neutral-300">Build the pipeline, not the wrapper.</strong>
+            Third-party APIs break, change, and rate-limit. I invest in resilient sync
+            infrastructure &mdash; retries, idempotency, real-time webhooks &mdash; rather than thin
+            client wrappers that fall apart in production.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-1" data-i18n="stack.ai.h">AI-Assisted Development</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 mb-3" data-i18n="stack.ai.p1">
+            <strong class="text-neutral-800 dark:text-neutral-300">Early adopter, daily user since day one.</strong>
+            Started with GitHub Copilot for scaffolding, then ChatGPT the day it launched.
+            Moved to Cursor when it went public, and now run a cross-model workflow between
+            Claude Code and Codex that I&rsquo;ve refined over the last two months.
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400 mb-3" data-i18n="stack.ai.p2">
+            My current flow: plan a feature in Claude Code, pass that plan to Codex to
+            refine it, then hand the refined plan to a fresh Claude Code session for
+            implementation &mdash; forcing it to rebuild context from scratch with only
+            the plan. After implementation, Codex reviews for edge cases and correctness.
+            I keep iterating between the two until Codex tells me the feature is ready
+            to ship.
+          </p>
+          <p class="text-neutral-600 dark:text-neutral-400" data-i18n="stack.ai.p3">
+            I don&rsquo;t use trending prompt frameworks &mdash; I think they&rsquo;re
+            crutches for people who aren&rsquo;t technical enough to prompt well on their
+            own. Vanilla Claude Code with its internal planning is good enough if you
+            know what you&rsquo;re building. The leverage comes from understanding the
+            code deeply and using AI to move through implementation faster, not from
+            outsourcing the thinking.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-200 dark:border-neutral-800/60">
+    <div class="max-w-2xl mx-auto px-6 py-12">
+      <nav class="flex items-center gap-5 text-sm text-neutral-400 dark:text-neutral-500">
+        <a href="https://github.com/josefeliuf" target="_blank" rel="noopener noreferrer"
+           class="hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">GitHub</a>
+        <a href="https://linkedin.com/in/josefeliuf" target="_blank" rel="noopener noreferrer"
+           class="hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">LinkedIn</a>
+        <a href="mailto:josefeliuf@gmail.com"
+           class="hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">Email</a>
+      </nav>
+      <p class="mt-4 text-xs text-neutral-400 dark:text-neutral-600" data-i18n="footer.built">
+        Built with HTML and Tailwind.
+        <a href="https://github.com/josefeliuf/josefeliuf.github.io" target="_blank" rel="noopener noreferrer"
+           class="hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors underline underline-offset-2 decoration-neutral-300 dark:decoration-neutral-700">Source</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+  // ── Theme toggle ──
+  (function() {
+    const html = document.documentElement;
+    const meta = document.getElementById('meta-theme');
+    const stored = localStorage.getItem('theme');
+    if (stored === 'light') { html.classList.remove('dark'); meta.content = '#ffffff'; }
+    else if (!stored && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      html.classList.remove('dark'); meta.content = '#ffffff';
+    }
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const dark = html.classList.toggle('dark');
+      meta.content = dark ? '#0a0a0a' : '#ffffff';
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    });
+  })();
+
+  // ── Expand/collapse sections ──
+  (function() {
+    [['atribu-toggle','atribu-details','atribu-chevron'],
+     ['sm-toggle','sm-details','sm-chevron']].forEach(([btnId, detId, chevId]) => {
+      const btn = document.getElementById(btnId);
+      const details = document.getElementById(detId);
+      const chevron = document.getElementById(chevId);
+      btn.addEventListener('click', () => {
+        const open = details.classList.toggle('hidden');
+        chevron.style.transform = open ? '' : 'rotate(180deg)';
+        btn.setAttribute('aria-expanded', !open);
+      });
+    });
+  })();
+
+  // ── Language toggle ──
+  (function() {
+    const btn = document.getElementById('lang-toggle');
+    const cache = {};
+    let lang = localStorage.getItem('lang') || 'en';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      cache[el.dataset.i18n] = el.innerHTML;
+    });
+
+    const es = {
+      "header.sub": "Ingeniero de software. Construyendo productos full stack &mdash; desde ML on-device y firmware embebido hasta backends en la nube y aplicaciones web.",
+      "now.h": "Ahora",
+      "now.p1": 'Construyendo <strong class="text-neutral-900 dark:text-neutral-100">Atribu</strong> &mdash; una plataforma de atribuci&oacute;n que ayuda a agencias de performance a entender qu&eacute; anuncios realmente generan ingresos. Conectando datos de Meta Ads, GoHighLevel, Stripe y MercadoPago en una sola fuente de verdad.',
+      "now.p2": "Pensando en modelos de atribuci&oacute;n multi-touch, pipelines de datos en tiempo real, y c&oacute;mo hacer que anal&iacute;ticas complejas se sientan simples para equipos de agencias que no tienen un data engineer.",
+      "now.date": "Actualizado marzo 2026",
+      "atribu.sub": "Plataforma de atribuci&oacute;n para agencias de performance &mdash; construida desde cero en un mes",
+      "atribu.problem": "Las agencias de performance ejecutan anuncios en m&uacute;ltiples plataformas y rastrean conversiones a trav&eacute;s de CRMs, procesadores de pago y landing pages. El problema: no hay una vista unificada de qu&eacute; est&aacute; funcionando. Las agencias dependen de m&eacute;tricas reportadas por las plataformas que inflan resultados, o construyen planillas fr&aacute;giles que se rompen cada mes.",
+      "atribu.pipeline": 'Atribu conecta todo el pipeline &mdash; gasto de <strong class="text-neutral-900 dark:text-neutral-100">Meta Ads</strong> y <strong class="text-neutral-900 dark:text-neutral-100">Google Ads</strong>, leads de <strong class="text-neutral-900 dark:text-neutral-100">GoHighLevel</strong>, pagos de <strong class="text-neutral-900 dark:text-neutral-100">Stripe</strong>, <strong class="text-neutral-900 dark:text-neutral-100">MercadoPago</strong> y <strong class="text-neutral-900 dark:text-neutral-100">Shopify</strong>, tr&aacute;fico org&aacute;nico de <strong class="text-neutral-900 dark:text-neutral-100">Google Search Console</strong>, y contexto de marca de <strong class="text-neutral-900 dark:text-neutral-100">Notion</strong> &mdash; ocho integraciones con flujos OAuth, webhooks y sincronizaci&oacute;n peri&oacute;dica.',
+      "atribu.engine.h": "Motor de Atribuci&oacute;n",
+      "atribu.engine.p": "Ocho modelos de atribuci&oacute;n &mdash; first-touch, last-touch, last non-direct, linear, position-based, time decay, 50/50 split y custom weighted &mdash; todos computados en tiempo de consulta v&iacute;a Postgres RPCs. Sin cr&eacute;ditos pre-almacenados; cambia de modelo instant&aacute;neamente sin reprocesar. Identity stitching vincula visitantes an&oacute;nimos con clientes conocidos entre dispositivos. Se crean touches sint&eacute;ticos para conversiones off-site (ej. leads de GHL v&iacute;a Meta) haciendo match de metadata contra el historial de sesiones previas.",
+      "atribu.tracker.p": "Un tracker JavaScript standalone distribuido como snippet IIFE y paquete npm. 30+ m&oacute;dulos de auto-captura &mdash; page views, env&iacute;os de formularios, checkouts de Stripe, compras de Shopify, formularios GHL, links externos, engagement de video, scroll depth, Web Vitals y eventos custom. Los eventos persisten en localStorage y se env&iacute;an en batch con backoff exponencial. Filtrado de bots, detecci&oacute;n de agentes IA, manejo de consentimiento GDPR y tracking de navegaci&oacute;n SPA incluidos.",
+      "atribu.explorer.p": "Extrae anuncios activos de competidores en Meta y TikTok &mdash; creativos, titulares, copy y media. Scoring con ML que rankea anuncios por potencial de engagement. Extrae keyframes y audio de anuncios de video. Se conecta directamente con el Ads Lab para generar variaciones.",
+      "atribu.lab.p": "Sistema multi-agente para creaci&oacute;n de anuncios, construido sobre ToolLoopAgent de Vercel AI. Agentes especializados &mdash; coordinador, investigaci&oacute;n, psicolog&iacute;a, copywriting, video scripting, compliance, y un cr&iacute;tico que activa loops de retry por calidad &mdash; orquestados en un pipeline que produce ad copy, guiones de video y briefs creativos informados por datos de competidores del Explorer y contexto de marca de Notion.",
+      "atribu.analytics.h": "Anal&iacute;ticas y Reportes",
+      "atribu.analytics.p": "Dashboards en tiempo real con KPIs de doble per&iacute;odo, an&aacute;lisis de funnel, breakdowns por canal, visualizaci&oacute;n de customer journey e insights generados por IA. Reportes programados por email, exportaci&oacute;n PDF y links p&uacute;blicos compartibles. Una API p&uacute;blica con 25+ endpoints, rate limiting y API keys con scopes.",
+      "atribu.expand": "Ver detalles t&eacute;cnicos",
+      "sm.expand": "Ver detalles t&eacute;cnicos",
+      "sm.sub": "Tecnolog&iacute;a infantil &mdash; smartwatches, tablets, baby monitors",
+      "sm.intro": "SoyMomo construye dispositivos conectados para la seguridad infantil. Trabaj&eacute; en casi todas las l&iacute;neas de producto durante cinco a&ntilde;os &mdash; smartwatches, tablets, baby monitors y sus backends en la nube. Comenc&eacute; como practicante investigando AOSP, crec&iacute; hasta ser due&ntilde;o de verticales de producto completas.",
+      "sm.intro2": 'Proyectos clave: cre&eacute; el <strong class="text-neutral-900 dark:text-neutral-100">launcher del smartwatch Space&nbsp;3</strong> y 20+ aplicaciones para el reloj; dise&ntilde;&eacute; un <strong class="text-neutral-900 dark:text-neutral-100">pipeline NLP multi-etapa</strong> para detectar ciberbullying y grooming en tablets (mi tesis universitaria, desplegado en producci&oacute;n); constru&iacute; el <strong class="text-neutral-900 dark:text-neutral-100">Baby Monitor Pro&nbsp;3.0</strong> desde firmware ESP32 y PCB custom hasta app de streaming WebRTC; despleg&uacute;e un <strong class="text-neutral-900 dark:text-neutral-100">servidor Valhalla</strong> para route matching GPS con algoritmos de clustering custom; cre&eacute; el <strong class="text-neutral-900 dark:text-neutral-100">asistente de voz HeyMomo</strong>; y constru&iacute; CI/CD, integraci&oacute;n MVNO e infraestructura de sistema para tablets.',
+      "sm.s3.h": "Plataforma Smartwatch Space 3",
+      "sm.s3.p1": "Cre&eacute; el launcher inicial y lider&eacute; el desarrollo de 20+ aplicaciones para el smartwatch insignia de SoyMomo. Constru&iacute; el chat, discador, agenda, c&aacute;mara, galer&iacute;a, teclado, ajustes, pod&oacute;metro, recordatorios, amigos, tienda de apps y gestor de autenticaci&oacute;n &mdash; todo corriendo en hardware Android con recursos limitados y comportamientos custom a nivel de sistema.",
+      "sm.s3.p2": "Desarroll&eacute; e integr&eacute; un modelo de keyword spotting on-device usando extracci&oacute;n de caracter&iacute;sticas MFCC, un clasificador CNN y capas SVDF, habilitando inteligencia de audio en streaming en el reloj cumpliendo con estrictas restricciones de latencia y energ&iacute;a. Este trabajo lider&oacute; el lanzamiento de una generaci&oacute;n de smartwatch que super&oacute; modelos anteriores e increment&oacute; la adopci&oacute;n de tarjetas SIM.",
+      "sm.nlp.h": "Detecci&oacute;n de Contenido Peligroso &mdash; Pipeline NLP",
+      "sm.nlp.thesis": "Proyecto de tesis universitaria, desplegado en producci&oacute;n",
+      "sm.nlp.p1": "Dise&ntilde;&eacute; e implement&eacute; un pipeline de moderaci&oacute;n NLP multi-etapa para las tablets Android de SoyMomo para detectar ciberbullying, grooming y contenido expl&iacute;cito en tiempo casi real. El sistema funciona en capas:",
+      "sm.nlp.ocr": "&mdash; reemplaz&oacute; la extracci&oacute;n de texto basada en Accessibility por OCR de screenshots usando Google ML Kit. Captura peri&oacute;dica, deduplicaci&oacute;n, persistencia local y workers de limpieza.",
+      "sm.nlp.dict": "&mdash; scoring ponderado para t&eacute;rminos de estado de &aacute;nimo, ciberbullying y grooming con patrones regex, expansi&oacute;n de jerga y cobertura biling&uuml;e.",
+      "sm.nlp.model": "&mdash; se evaluaron RoBERTa, DeBERTa, BETO y RoBERTuito; se seleccion&oacute; XLM-RoBERTa por rendimiento multiling&uuml;e. Fine-tuned con 20.000 ejemplos curados, convertido a ONNX y cuantizado &mdash; reduciendo memoria un 40% y aumentando velocidad de inferencia un 30%.",
+      "sm.nlp.rust": "&mdash; integraci&oacute;n de tokenizers de Hugging Face en Rust v&iacute;a JNI para inferencia sensible al rendimiento en Android.",
+      "sm.nlp.cloud": "&mdash; procesamiento batch con GPT-4o usando batches JSONL y jobs programados en backend para validaci&oacute;n de segunda etapa.",
+      "sm.nlp.alerts.label": "Alertas para padres",
+      "sm.nlp.alerts": "&mdash; notificaciones en tiempo real con etiquetas, screenshots y vistas detalladas de detecci&oacute;n.",
+      "sm.nlp.tools": "Tracking de experimentos con MLflow. Versionado de modelos con DVC. La arquitectura completa y evaluaci&oacute;n est&aacute;n documentadas en mi tesis universitaria.",
+      "sm.baby.p1": "Inici&eacute; y cre&eacute; un baby monitor de nueva generaci&oacute;n desde cero. Dise&ntilde;ado en torno a un ESP32 con c&aacute;mara OV2640 en un PCB custom, todo el firmware escrito en C usando el framework IDF de Espressif. Streaming de audio y video en tiempo real sobre WebRTC con arquitectura privacy-first &mdash; sin relay en la nube, conexiones peer-to-peer directas entre el monitor y el tel&eacute;fono del padre.",
+      "sm.baby.p2": "Constru&iacute; la aplicaci&oacute;n Android companion con provisionamiento BLE y reproducci&oacute;n de stream en vivo. Explor&eacute; Wi-Fi HaLow (802.11ah) para rango extendido en bandas sub-1GHz usando m&oacute;dulos Morse Micro MM8108, incluyendo trabajo con kernel modules custom en Android&nbsp;14 con hardware UNISOC T616.",
+      "sm.baby.p3": "Tambi&eacute;n constru&iacute; el backend cloud para streaming IoT de audio/video usando MQTT, RTMP, NGINX y AWS, m&aacute;s modelos de detecci&oacute;n de postura infantil y clasificaci&oacute;n de llanto de beb&eacute; para alertas inteligentes.",
+      "sm.loc.h": "Historial de Ubicaci&oacute;n y Route Matching",
+      "sm.loc.p1": "Reconstru&iacute; la funcionalidad de historial de ubicaci&oacute;n para los smartwatches de SoyMomo, convirtiendo trazas GPS ruidosas de dispositivos de ni&ntilde;os en rutas limpias y significativas. Despleg&uacute;e un servidor Valhalla self-hosted para map-matching e implement&eacute; m&uacute;ltiples estrategias de clustering para encontrar la mejor ruta que coincida con el camino real que el ni&ntilde;o tom&oacute; durante el d&iacute;a.",
+      "sm.loc.p2": "Implement&eacute; y evalu&eacute; ST-DBSCAN (clustering de densidad espacio-temporal), clustering adaptativo que ajusta par&aacute;metros seg&uacute;n la densidad de datos GPS, algoritmos de detecci&oacute;n de paradas, clustering por ventanas de tiempo y simplificaci&oacute;n de trayectorias. Todo con c&aacute;lculos de centroides ponderados basados en precisi&oacute;n GPS. Constru&iacute; un dashboard en Next.js para visualizar y comparar experimentos entre algoritmos.",
+      "sm.hey.p1": "Cre&eacute; un asistente de voz para los dispositivos smart de SoyMomo usando speech-to-text y text-to-speech de GCP, mejorado con word2vec, topic modeling y clustering para mejor comprensi&oacute;n de intenci&oacute;n. Despu&eacute;s evolucion&oacute; a un sistema conversacional LLM respaldado por Supabase para memoria persistente &mdash; el asistente recuerda datos de cada ni&ntilde;o (colores favoritos, comidas, materias del colegio) y puede gestionar contactos, enviar mensajes e iniciar llamadas.",
+      "sm.hey.p2": "Tambi&eacute;n desarroll&eacute; y publiqu&eacute; una librer&iacute;a de grabaci&oacute;n de audio para Android en Maven, estandarizando la captura de audio en dispositivos SoyMomo y reduciendo el tiempo de desarrollo para funcionalidades de audio.",
+      "sm.tab.h": "Plataforma Tablet e Ingenier&iacute;a de Sistemas",
+      "sm.tab.p1": "Constru&iacute; y mantuve funcionalidad core de Android para la plataforma tablet de SoyMomo, incluyendo servicios a nivel de sistema, infraestructura de screenshots y monitoreo, foreground services, gesti&oacute;n de overlays, MediaProjection y despliegue de apps OEM/sistema. Refactoriz&eacute; el sistema de actualizaci&oacute;n de apps de la tablet con Cloudflare, reduciendo costos de transferencia de datos y mejorando la eficiencia de actualizaciones en la flota de producci&oacute;n.",
+      "sm.tab.p2": "Tambi&eacute;n ship&eacute; un sistema de detecci&oacute;n de im&aacute;genes usando YOLO para identificar contenido visual inapropiado en las tablets.",
+      "sm.infra.p": "Lider&eacute; la implementaci&oacute;n app-side de la capacidad de suscripci&oacute;n SIM de SoyMomo, incluyendo investigaci&oacute;n MVNO, desarrollo de funcionalidades de ingresos recurrentes e integraci&oacute;n con sistemas backend y proveedores SIM. Cre&eacute; pipelines CI/CD para la mayor&iacute;a de las aplicaciones Android de SoyMomo, mejorando velocidad y confiabilidad de despliegue. Al inicio, investugu&eacute; e implement&eacute; un sistema operativo b&aacute;sico basado en AOSP y mejor&eacute; la arquitectura del servicio de bloqueo de anuncios.",
+      "work.h": "Experiencia",
+      "work.atribu.role": "Co-fundador T&eacute;cnico",
+      "work.atribu.desc": "Construyendo una plataforma de atribuci&oacute;n para agencias de performance desde cero. Full-stack &mdash; frontend React/Next.js, integraciones con Meta Ads, GoHighLevel, Stripe, MercadoPago y Notion. Liderando todo el producto e ingenier&iacute;a como co-fundador t&eacute;cnico.",
+      "work.cm.role": "CEO y Co-fundador",
+      "work.cm.desc": "Co-fund&eacute; una agencia de fundraising que atiende principalmente a fundaciones. Cerr&eacute; contratos multi-a&ntilde;o, constru&iacute; el modelo de negocio y las presentaciones a clientes, y gestiono relaciones con clientes semanalmente. En lo t&eacute;cnico, automatiz&eacute; toda la operaci&oacute;n &mdash; constru&iacute; un dashboard admin en Next.js para comisiones, pagos, contabilidad y cumplimiento tributario (SII); una app m&oacute;vil en Kotlin Multiplatform para vendedores en terreno para escanear c&eacute;dulas y subir boletas; un pipeline OCR para procesamiento de boletas a escala; y herramientas de modelamiento financiero para proyecciones de campa&ntilde;as. Alcanz&oacute; ~$1M en ingresos brutos en su primer a&ntilde;o completo. Actualmente en segundo plano (operaciones automatizadas) mientras me enfoco en Atribu.",
+      "work.sm.desc": "Cinco a&ntilde;os entre smartwatches, tablets, baby monitors y servicios cloud para una empresa de tecnolog&iacute;a infantil. Ship&eacute; 20+ aplicaciones Android para el reloj Space&nbsp;3, constru&iacute; un pipeline de seguridad NLP para moderaci&oacute;n de contenido, cre&eacute; un baby monitor desde hardware custom hasta app companion, y lider&eacute; proyectos de historial de ubicaci&oacute;n, asistente de voz e infraestructura. Comenc&eacute; como practicante investigando AOSP, crec&iacute; hasta ser due&ntilde;o de verticales de producto completas.",
+      "edu.h": "Educaci&oacute;n",
+      "edu.degree": "Ingeniero Civil en Computaci&oacute;n. Major en Ingenier&iacute;a de Software, minor en Data Science &amp; Analytics.",
+      "edu.thesis": "Tesis: Pipeline NLP para detecci&oacute;n de contenido peligroso en tablets infantiles &mdash; desplegado en producci&oacute;n en SoyMomo.",
+      "edu.ta.h": "Ayudant&iacute;as",
+      "edu.ta.capstone": "Proyecto de Especialidad (Capstone)",
+      "edu.ta.capstone.desc": "Gui&eacute; a equipos de estudiantes durante sus proyectos de especialidad, brindando mentor&iacute;a semanal sobre avance y alcance. Tambi&eacute;n dict&eacute; un m&oacute;dulo sobre buenas pr&aacute;cticas de testing de software &mdash; an&aacute;lisis de c&oacute;digo est&aacute;tico, monitoreo, code review y CI/CD.",
+      "edu.ta.math": "Matem&aacute;ticas Discretas",
+      "edu.ta.math.desc": "Ayudante corrector durante dos semestres. Evalu&eacute; tareas y ex&aacute;menes en combinatoria, teor&iacute;a de grafos y l&oacute;gica formal.",
+      "stack.h": "C&oacute;mo Construyo",
+      "stack.intro": "Decisiones con opini&oacute;n, elegidas por prueba y error. Valoro herramientas que me permiten moverme r&aacute;pido sin pelear con el framework.",
+      "stack.fe": '<strong class="text-neutral-800 dark:text-neutral-300">React + Next.js + TypeScript.</strong> He probado alternativas. Siempre vuelvo. La profundidad del ecosistema, el pool de talento, y el modelo de server components del App Router lo hacen la opci&oacute;n pragm&aacute;tica para productos que necesitan salir r&aacute;pido e iterar.',
+      "stack.css": '<strong class="text-neutral-800 dark:text-neutral-300">Tailwind CSS + shadcn/ui.</strong> Utility-first es la abstracci&oacute;n correcta para UI. Sin debates de nombres, sin guerras de especificidad, sin CSS muerto. shadcn/ui te da componentes reales que son tuyos &mdash; no una dependencia que se rompe en cada major version.',
+      "stack.mobile": '<strong class="text-neutral-800 dark:text-neutral-300">Android nativo (Kotlin), C para firmware, Rust donde importa.</strong> Despu&eacute;s de a&ntilde;os de trabajo Android a nivel de sistema en hardware limitado, prefiero nativo sobre cross-platform. Para embebido, ESP-IDF y C dan el control que necesitas. Rust v&iacute;a JNI cuando necesitas bridging seguro y r&aacute;pido entre mundos.',
+      "stack.ml": '<strong class="text-neutral-800 dark:text-neutral-300">PyTorch para entrenar, ONNX para desplegar.</strong> Fine-tune en Python, cuantizar agresivamente, correr on-device con ONNX Runtime. MLflow para tracking de experimentos. El modelo que corre en la tablet de un ni&ntilde;o necesita ser r&aacute;pido y liviano &mdash; no solo preciso.',
+      "stack.pay.h": "Pagos",
+      "stack.pay": '<strong class="text-neutral-800 dark:text-neutral-300">Stripe para internacional, MercadoPago para LATAM.</strong> No puedes servir Latinoam&eacute;rica solo con Stripe. MercadoPago maneja m&eacute;todos de pago locales que Stripe simplemente no soporta.',
+      "stack.int.h": "Integraciones",
+      "stack.int": '<strong class="text-neutral-800 dark:text-neutral-300">Construye el pipeline, no el wrapper.</strong> Las APIs de terceros se rompen, cambian y limitan requests. Invierto en infraestructura de sync resiliente &mdash; reintentos, idempotencia, webhooks en tiempo real &mdash; en vez de wrappers finos que se caen en producci&oacute;n.',
+      "stack.ai.h": "Desarrollo Asistido por IA",
+      "stack.ai.p1": '<strong class="text-neutral-800 dark:text-neutral-300">Early adopter, usuario diario desde el d&iacute;a uno.</strong> Empec&eacute; con GitHub Copilot para scaffolding, luego ChatGPT el d&iacute;a que sali&oacute;. Me mov&iacute; a Cursor cuando se hizo p&uacute;blico, y ahora uso un workflow cross-model entre Claude Code y Codex que he refinado en los &uacute;ltimos dos meses.',
+      "stack.ai.p2": "Mi flujo actual: planeo una feature en Claude Code, paso ese plan a Codex para refinarlo, luego paso el plan refinado a una sesi&oacute;n fresca de Claude Code para implementaci&oacute;n &mdash; forz&aacute;ndolo a reconstruir contexto desde cero solo con el plan. Despu&eacute;s de la implementaci&oacute;n, Codex revisa edge cases y correctitud. Sigo iterando entre ambos hasta que Codex me dice que la feature est&aacute; lista para ship.",
+      "stack.ai.p3": "No uso frameworks de prompts de moda &mdash; creo que son muletas para gente que no es lo suficientemente t&eacute;cnica para promptear bien por su cuenta. Vanilla Claude Code con su planning interno es suficiente si sabes lo que est&aacute;s construyendo. El leverage viene de entender el c&oacute;digo profundamente y usar IA para avanzar m&aacute;s r&aacute;pido en la implementaci&oacute;n, no de externalizar el pensamiento.",
+      "footer.built": 'Construido con HTML y Tailwind. <a href="https://github.com/josefeliuf/josefeliuf.github.io" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors underline underline-offset-2 decoration-neutral-300 dark:decoration-neutral-700">C&oacute;digo fuente</a>',
+    };
+
+    function setLang(l) {
+      lang = l;
+      document.documentElement.lang = l;
+      btn.textContent = l === 'en' ? 'ES' : 'EN';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.dataset.i18n;
+        el.innerHTML = l === 'es' ? (es[k] || cache[k]) : cache[k];
+      });
+      localStorage.setItem('lang', l);
+    }
+
+    btn.addEventListener('click', () => setLang(lang === 'en' ? 'es' : 'en'));
+    if (lang === 'es') setLang('es');
+  })();
+  </script>
+
+</body>
 </html>
