@@ -60,8 +60,8 @@
             José Ignacio Feliú Fernández
           </h1>
           <p class="mt-3 text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="header.sub">
-            Software engineer. Building products across the full stack &mdash; from
-            on-device ML and embedded firmware to cloud backends and web applications.
+            Cofounder &amp; CEO at Vitrina. Software engineer building products across the full stack,
+            from on-device ML and embedded firmware to AI agents, cloud backends and web applications.
           </p>
           <nav class="mt-5 flex items-center gap-5 text-sm text-neutral-500 dark:text-neutral-400">
             <a href="https://github.com/josefeliuf" target="_blank" rel="noopener noreferrer"
@@ -90,16 +90,93 @@
       <h2 class="text-lg font-mono font-semibold mb-4" data-i18n="now.h">Now</h2>
       <div class="space-y-3 text-neutral-700 dark:text-neutral-300 leading-relaxed">
         <p data-i18n="now.p1">
-          Building <strong class="text-neutral-900 dark:text-neutral-100">Atribu</strong> &mdash; an attribution platform that
-          helps performance agencies understand which ads actually drive revenue. Connecting data
-          from Meta Ads, GoHighLevel, Stripe, and MercadoPago into a single source of truth.
+          Building <strong class="text-neutral-900 dark:text-neutral-100">Vitrina</strong>, the AI platform where a small business lives.
+          One system of record for conversations, customers, stock, scheduling, website and invoicing,
+          with AI agents that answer WhatsApp, Instagram, email, marketplaces and calls on the real data.
+          Car dealerships first, clinics second. Two founders, no employees, shipping every day.
         </p>
         <p data-i18n="now.p2">
-          Thinking about multi-touch attribution models, real-time data pipelines, and how to make
-          complex analytics feel simple for agency teams that don&rsquo;t have a data engineer on staff.
+          Also building <strong class="text-neutral-900 dark:text-neutral-100">Atribu</strong>, attribution for performance agencies, which is becoming
+          the ad-attribution layer inside Vitrina. Thinking about agents that are reliable enough to run a
+          business&rsquo;s front desk, and about making every product feature reachable by the customer&rsquo;s own AI through MCP.
         </p>
       </div>
-      <p class="mt-4 text-xs text-neutral-400 dark:text-neutral-500 font-mono" data-i18n="now.date">Updated March 2026</p>
+      <p class="mt-4 text-xs text-neutral-400 dark:text-neutral-500 font-mono" data-i18n="now.date">Updated October 2026</p>
+    </section>
+
+    <!-- 3. VITRINA -->
+    <section class="pb-16">
+      <div class="-mx-6 px-6 py-10 bg-neutral-50 dark:bg-neutral-900/40 rounded-lg border border-neutral-200 dark:border-neutral-800/50">
+        <h2 class="text-lg font-mono font-semibold mb-1"><a href="https://vitrinadev.com" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-4">Vitrina</a></h2>
+        <p class="text-sm text-neutral-500 mb-5" data-i18n="vit.sub">The AI platform where a small business lives. Cofounder &amp; CEO, 2026 to present</p>
+
+        <div class="space-y-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+          <p data-i18n="vit.problem">
+            Most small businesses run on WhatsApp, Instagram, spreadsheets and a few tools that don&rsquo;t talk to each other. The usual &ldquo;AI for SMBs&rdquo; puts a chatbot on top of that. The bot can&rsquo;t see the stock, the calendar or the prices, so someone still has to answer by hand.
+          </p>
+          <p data-i18n="vit.solution">
+            Vitrina is where the business lives instead. The chats, the customers, the stock, the calendar, the website and the invoices, all in one place, with an AI on top that works with the real data. It quotes the car that&rsquo;s actually in stock and books the slot that&rsquo;s actually free. It started as the WhatsApp sales agent I built at SoyMomo in 2024. We began with car dealerships. Now clinics too.
+          </p>
+        </div>
+
+        <button id="vit-toggle" class="mt-6 mb-6 flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors" aria-expanded="false" aria-controls="vit-details">
+          <svg id="vit-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span data-i18n="vit.expand">See technical details</span>
+        </button>
+
+        <div id="vit-details" class="hidden">
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="vit.agents.h">AI Agents &amp; Omnichannel Inbox</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="vit.agents.p">
+            One inbox for WhatsApp Cloud API, Instagram DMs and comments, Messenger, email, MercadoLibre questions and voice calls. Per-tenant agents built on the Vercel AI SDK with dozens of platform tools (stock search, quotes, bookings, payment confirmation, handoff), automatic follow-ups, human takeover, and an eval suite with an LLM judge where every human correction becomes a regression test.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="vit.auto.h">Automotive Vertical</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="vit.auto.p">
+            Stock deduplicated by plate and VIN and published to MercadoLibre, Chileautos and Yapo. A used-car valuation engine combining hedonic regression on scraped market listings with OEM list prices. Quotes, reservations, consignment contracts, sale notes, commissions, bank-receipt matching, a financing simulator, test-drive scheduling, and white-label dealer websites deployed on Cloudflare.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="vit.clinics.h">Clinics Vertical</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="vit.clinics.p">
+            Patients, professionals, priced services and appointments, with two-way sync to the practice-management systems clinics already use, so the agent can book real slots and confirm real payments.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="vit.api.h">API-first, Agent-friendly</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="vit.api.p">
+            The UI is just a client of our public REST API, with generated OpenAPI and a TypeScript SDK. The same API is an MCP server, so a customer can run their business from Claude or ChatGPT. Electronic invoicing for Chile&rsquo;s SII comes from Factur&iacute;a, our own invoicing API.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-2" data-i18n="vit.eng.h">How it&rsquo;s built</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="vit.eng.p">
+            A multi-tenant TypeScript backend (Express, BullMQ workers, Postgres on Supabase) on Fly.io, and a Next.js frontend. It&rsquo;s Francisco and me, no employees, and a lot of Claude Code sessions running in parallel.
+          </p>
+        </div>
+
+        </div><!-- /vit-details -->
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">TypeScript</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Node.js</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Next.js</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Postgres</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Supabase</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">BullMQ</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Vercel AI SDK</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">OpenRouter</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">MCP</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">WhatsApp Cloud API</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Fly.io</span>
+          <span class="px-2.5 py-1 text-xs font-mono text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/60 rounded">Cloudflare</span>
+        </div>
+      </div>
     </section>
 
     <!-- 3. ATRIBU -->
@@ -441,6 +518,20 @@
       <div class="space-y-8">
         <div>
           <div class="flex flex-wrap items-baseline gap-x-2">
+            <h3 class="text-neutral-900 dark:text-neutral-100 font-medium">Vitrina</h3>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+            <span class="text-neutral-600 dark:text-neutral-400 text-sm" data-i18n="work.vit.role">Cofounder &amp; CEO</span>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
+            <span class="text-neutral-400 dark:text-neutral-500 text-sm font-mono">2026&ndash;present</span>
+          </div>
+          <p class="mt-1.5 text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n="work.vit.desc">
+            Cofounded Vitrina with Francisco Ordenes (CTO), both ex-SoyMomo. Lead product, sales and
+            engineering: an AI platform where small businesses run their whole operation, live with car
+            dealerships and clinics in Chile since May 2026.
+          </p>
+        </div>
+        <div>
+          <div class="flex flex-wrap items-baseline gap-x-2">
             <h3 class="text-neutral-900 dark:text-neutral-100 font-medium">Atribu</h3>
             <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
             <span class="text-neutral-600 dark:text-neutral-400 text-sm" data-i18n="work.atribu.role">Technical Co-founder</span>
@@ -471,14 +562,14 @@
             app for field salespeople to scan IDs and upload receipts; an OCR pipeline
             for receipt processing at scale; and financial modeling tools for campaign
             projections. Reached ~$1M in gross revenue in its first full year. Currently
-            scaled back (operations automated) while focused on Atribu.
+            scaled back (operations automated) while focused on Vitrina.
           </p>
         </div>
         <div>
           <div class="flex flex-wrap items-baseline gap-x-2">
             <h3 class="text-neutral-900 dark:text-neutral-100 font-medium">SoyMomo</h3>
             <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
-            <span class="text-neutral-600 dark:text-neutral-400 text-sm">Software Engineer</span>
+            <span class="text-neutral-600 dark:text-neutral-400 text-sm" data-i18n="work.sm.role">Intern &rarr; Head of Mobile Development</span>
             <span class="text-neutral-400 dark:text-neutral-500 text-sm">&middot;</span>
             <span class="text-neutral-400 dark:text-neutral-500 text-sm font-mono">2021&ndash;2026</span>
           </div>
@@ -488,7 +579,7 @@
             the Space&nbsp;3 watch, built an NLP safety pipeline for content moderation,
             created a baby monitor from custom hardware to companion app, and led location
             history, voice assistant, and infrastructure projects. Started as an intern
-            doing AOSP research, grew into owning full product verticals.
+            doing AOSP research and left as Head of Mobile Development.
           </p>
         </div>
       </div>
@@ -608,26 +699,13 @@
         <div>
           <h3 class="text-sm font-mono font-medium text-neutral-900 dark:text-neutral-100 mb-1" data-i18n="stack.ai.h">AI-Assisted Development</h3>
           <p class="text-neutral-600 dark:text-neutral-400 mb-3" data-i18n="stack.ai.p1">
-            <strong class="text-neutral-800 dark:text-neutral-300">Early adopter, daily user since day one.</strong>
-            Started with GitHub Copilot for scaffolding, then ChatGPT the day it launched.
-            Moved to Cursor when it went public, and now run a cross-model workflow between
-            Claude Code and Codex that I&rsquo;ve refined over the last two months.
+            <strong class="text-neutral-800 dark:text-neutral-300">Daily user since day one.</strong> Started with GitHub Copilot, then ChatGPT the day it launched, then Cursor. Today it&rsquo;s mostly Claude Code.
           </p>
           <p class="text-neutral-600 dark:text-neutral-400 mb-3" data-i18n="stack.ai.p2">
-            My current flow: plan a feature in Claude Code, pass that plan to Codex to
-            refine it, then hand the refined plan to a fresh Claude Code session for
-            implementation &mdash; forcing it to rebuild context from scratch with only
-            the plan. After implementation, Codex reviews for edge cases and correctness.
-            I keep iterating between the two until Codex tells me the feature is ready
-            to ship.
+            Several sessions at once, each one in its own worktree, with skills and MCPs for everything from the database to Cloudflare. My job now is deciding what to build and checking that it actually works.
           </p>
           <p class="text-neutral-600 dark:text-neutral-400" data-i18n="stack.ai.p3">
-            I don&rsquo;t use trending prompt frameworks &mdash; I think they&rsquo;re
-            crutches for people who aren&rsquo;t technical enough to prompt well on their
-            own. Vanilla Claude Code with its internal planning is good enough if you
-            know what you&rsquo;re building. The leverage comes from understanding the
-            code deeply and using AI to move through implementation faster, not from
-            outsourcing the thinking.
+            The leverage still comes from understanding the code. AI moves you through the implementation faster. It doesn&rsquo;t do the thinking for you.
           </p>
         </div>
       </div>
@@ -673,7 +751,8 @@
 
   // ── Expand/collapse sections ──
   (function() {
-    [['atribu-toggle','atribu-details','atribu-chevron'],
+    [['vit-toggle','vit-details','vit-chevron'],
+     ['atribu-toggle','atribu-details','atribu-chevron'],
      ['sm-toggle','sm-details','sm-chevron']].forEach(([btnId, detId, chevId]) => {
       const btn = document.getElementById(btnId);
       const details = document.getElementById(detId);
@@ -697,11 +776,28 @@
     });
 
     const es = {
-      "header.sub": "Ingeniero de software. Construyendo productos full stack &mdash; desde ML on-device y firmware embebido hasta backends en la nube y aplicaciones web.",
+      "header.sub": "Cofundador y CEO en Vitrina. Ingeniero de software construyendo productos full stack, desde ML on-device y firmware embebido hasta agentes de IA, backends en la nube y aplicaciones web.",
       "now.h": "Ahora",
-      "now.p1": 'Construyendo <strong class="text-neutral-900 dark:text-neutral-100">Atribu</strong> &mdash; una plataforma de atribuci&oacute;n que ayuda a agencias de performance a entender qu&eacute; anuncios realmente generan ingresos. Conectando datos de Meta Ads, GoHighLevel, Stripe y MercadoPago en una sola fuente de verdad.',
-      "now.p2": "Pensando en modelos de atribuci&oacute;n multi-touch, pipelines de datos en tiempo real, y c&oacute;mo hacer que anal&iacute;ticas complejas se sientan simples para equipos de agencias que no tienen un data engineer.",
-      "now.date": "Actualizado marzo 2026",
+      "now.p1": 'Construyendo <strong class="text-neutral-900 dark:text-neutral-100">Vitrina</strong>, la plataforma con IA donde vive tu negocio. Un solo sistema para conversaciones, clientes, stock, agenda, sitio web y facturaci&oacute;n, con agentes de IA que responden WhatsApp, Instagram, email, marketplaces y llamadas sobre los datos reales. Partimos con automotoras y seguimos con cl&iacute;nicas. Dos fundadores, sin empleados, sacando cosas a producci&oacute;n todos los d&iacute;as.',
+      "now.p2": 'Tambi&eacute;n construyo <strong class="text-neutral-900 dark:text-neutral-100">Atribu</strong>, atribuci&oacute;n para agencias de performance, que se est&aacute; convirtiendo en la capa de atribuci&oacute;n de anuncios dentro de Vitrina. Pensando en agentes lo suficientemente confiables para atender el mes&oacute;n de un negocio, y en que cada funcionalidad del producto sea accesible para la IA del propio cliente v&iacute;a MCP.',
+      "now.date": "Actualizado octubre 2026",
+      "vit.sub": "La plataforma con IA donde vive tu negocio. Cofundador y CEO, 2026 a la fecha",
+      "vit.problem": "La mayor&iacute;a de las PYMEs funciona con WhatsApp, Instagram, planillas y un par de herramientas que no se hablan entre s&iacute;. La t&iacute;pica &ldquo;IA para PYMEs&rdquo; le pone un chatbot encima a eso. El bot no ve el stock, la agenda ni los precios, as&iacute; que alguien igual tiene que responder a mano.",
+      "vit.solution": "Vitrina es donde vive el negocio. Las conversaciones, los clientes, el stock, la agenda, el sitio web y las facturas, todo en un solo lugar, con una IA encima que trabaja con los datos reales. Cotiza el auto que de verdad est&aacute; en stock y agenda la hora que de verdad est&aacute; libre. Parti&oacute; como el agente de ventas por WhatsApp que arm&eacute; en SoyMomo en 2024. Partimos con automotoras. Ahora tambi&eacute;n cl&iacute;nicas.",
+      "vit.expand": "Ver detalles t&eacute;cnicos",
+      "vit.agents.h": "Agentes de IA y Bandeja Omnicanal",
+      "vit.agents.p": "Una sola bandeja para WhatsApp Cloud API, DMs y comentarios de Instagram, Messenger, email, preguntas de MercadoLibre y llamadas de voz. Agentes por cliente construidos sobre Vercel AI SDK con decenas de herramientas (b&uacute;squeda de stock, cotizaciones, agendamiento, confirmaci&oacute;n de pagos, derivaci&oacute;n), seguimientos autom&aacute;ticos, toma de control humana y una suite de evals con un juez LLM donde cada correcci&oacute;n humana se convierte en un test de regresi&oacute;n.",
+      "vit.auto.h": "Vertical Automotriz",
+      "vit.auto.p": "Stock deduplicado por patente y VIN, publicado en MercadoLibre, Chileautos y Yapo. Un motor de tasaci&oacute;n de usados que combina regresi&oacute;n hed&oacute;nica sobre avisos del mercado con precios de lista de las marcas. Cotizaciones, reservas, contratos de consignaci&oacute;n, notas de venta, comisiones, conciliaci&oacute;n de transferencias bancarias, simulador de cr&eacute;dito, agenda de test drives y sitios web marca blanca para automotoras desplegados en Cloudflare.",
+      "vit.clinics.h": "Vertical Cl&iacute;nicas",
+      "vit.clinics.p": "Pacientes, profesionales, servicios con precio y citas, con sincronizaci&oacute;n bidireccional con los sistemas de gesti&oacute;n que las cl&iacute;nicas ya usan, para que el agente agende horas reales y confirme pagos reales.",
+      "vit.api.h": "API-first y Pensada para Agentes",
+      "vit.api.p": "La UI es solo un cliente de nuestra API REST p&uacute;blica, con OpenAPI generado y un SDK en TypeScript. La misma API es un servidor MCP, as&iacute; que un cliente puede operar su negocio desde Claude o ChatGPT. La facturaci&oacute;n electr&oacute;nica ante el SII viene de Factur&iacute;a, nuestra propia API de facturaci&oacute;n.",
+      "vit.eng.h": "C&oacute;mo est&aacute; construido",
+      "vit.eng.p": "Un backend multi-tenant en TypeScript (Express, workers BullMQ, Postgres en Supabase) sobre Fly.io, y un frontend en Next.js. Somos Francisco y yo, sin empleados, y muchas sesiones de Claude Code corriendo en paralelo.",
+      "work.vit.role": "Cofundador y CEO",
+      "work.vit.desc": "Cofund&eacute; Vitrina con Francisco Ordenes (CTO), ambos ex-SoyMomo. Lidero producto, ventas e ingenier&iacute;a: una plataforma con IA donde las PYMEs operan todo su negocio, en producci&oacute;n con automotoras y cl&iacute;nicas en Chile desde mayo de 2026.",
+      "work.sm.role": "Practicante &rarr; Head of Mobile Development",
       "atribu.sub": "Plataforma de atribuci&oacute;n para agencias de performance &mdash; construida desde cero en un mes",
       "atribu.problem": "Las agencias de performance ejecutan anuncios en m&uacute;ltiples plataformas y rastrean conversiones a trav&eacute;s de CRMs, procesadores de pago y landing pages. El problema: no hay una vista unificada de qu&eacute; est&aacute; funcionando. Las agencias dependen de m&eacute;tricas reportadas por las plataformas que inflan resultados, o construyen planillas fr&aacute;giles que se rompen cada mes.",
       "atribu.pipeline": 'Atribu conecta todo el pipeline &mdash; gasto de <strong class="text-neutral-900 dark:text-neutral-100">Meta Ads</strong> y <strong class="text-neutral-900 dark:text-neutral-100">Google Ads</strong>, leads de <strong class="text-neutral-900 dark:text-neutral-100">GoHighLevel</strong>, pagos de <strong class="text-neutral-900 dark:text-neutral-100">Stripe</strong>, <strong class="text-neutral-900 dark:text-neutral-100">MercadoPago</strong> y <strong class="text-neutral-900 dark:text-neutral-100">Shopify</strong>, tr&aacute;fico org&aacute;nico de <strong class="text-neutral-900 dark:text-neutral-100">Google Search Console</strong>, y contexto de marca de <strong class="text-neutral-900 dark:text-neutral-100">Notion</strong> &mdash; ocho integraciones con flujos OAuth, webhooks y sincronizaci&oacute;n peri&oacute;dica.',
@@ -747,8 +843,8 @@
       "work.atribu.role": "Co-fundador T&eacute;cnico",
       "work.atribu.desc": "Construyendo una plataforma de atribuci&oacute;n para agencias de performance desde cero. Full-stack &mdash; frontend React/Next.js, integraciones con Meta Ads, GoHighLevel, Stripe, MercadoPago y Notion. Liderando todo el producto e ingenier&iacute;a como co-fundador t&eacute;cnico.",
       "work.cm.role": "CEO y Co-fundador",
-      "work.cm.desc": "Co-fund&eacute; una agencia de fundraising que atiende principalmente a fundaciones. Cerr&eacute; contratos multi-a&ntilde;o, constru&iacute; el modelo de negocio y las presentaciones a clientes, y gestiono relaciones con clientes semanalmente. En lo t&eacute;cnico, automatiz&eacute; toda la operaci&oacute;n &mdash; constru&iacute; un dashboard admin en Next.js para comisiones, pagos, contabilidad y cumplimiento tributario (SII); una app m&oacute;vil en Kotlin Multiplatform para vendedores en terreno para escanear c&eacute;dulas y subir boletas; un pipeline OCR para procesamiento de boletas a escala; y herramientas de modelamiento financiero para proyecciones de campa&ntilde;as. Alcanz&oacute; ~$1M en ingresos brutos en su primer a&ntilde;o completo. Actualmente en segundo plano (operaciones automatizadas) mientras me enfoco en Atribu.",
-      "work.sm.desc": "Cinco a&ntilde;os entre smartwatches, tablets, baby monitors y servicios cloud para una empresa de tecnolog&iacute;a infantil. Ship&eacute; 20+ aplicaciones Android para el reloj Space&nbsp;3, constru&iacute; un pipeline de seguridad NLP para moderaci&oacute;n de contenido, cre&eacute; un baby monitor desde hardware custom hasta app companion, y lider&eacute; proyectos de historial de ubicaci&oacute;n, asistente de voz e infraestructura. Comenc&eacute; como practicante investigando AOSP, crec&iacute; hasta ser due&ntilde;o de verticales de producto completas.",
+      "work.cm.desc": "Co-fund&eacute; una agencia de fundraising que atiende principalmente a fundaciones. Cerr&eacute; contratos multi-a&ntilde;o, constru&iacute; el modelo de negocio y las presentaciones a clientes, y gestiono relaciones con clientes semanalmente. En lo t&eacute;cnico, automatiz&eacute; toda la operaci&oacute;n &mdash; constru&iacute; un dashboard admin en Next.js para comisiones, pagos, contabilidad y cumplimiento tributario (SII); una app m&oacute;vil en Kotlin Multiplatform para vendedores en terreno para escanear c&eacute;dulas y subir boletas; un pipeline OCR para procesamiento de boletas a escala; y herramientas de modelamiento financiero para proyecciones de campa&ntilde;as. Alcanz&oacute; ~$1M en ingresos brutos en su primer a&ntilde;o completo. Actualmente en segundo plano (operaciones automatizadas) mientras me enfoco en Vitrina.",
+      "work.sm.desc": "Cinco a&ntilde;os entre smartwatches, tablets, baby monitors y servicios cloud para una empresa de tecnolog&iacute;a infantil. Ship&eacute; 20+ aplicaciones Android para el reloj Space&nbsp;3, constru&iacute; un pipeline de seguridad NLP para moderaci&oacute;n de contenido, cre&eacute; un baby monitor desde hardware custom hasta app companion, y lider&eacute; proyectos de historial de ubicaci&oacute;n, asistente de voz e infraestructura. Comenc&eacute; como practicante investigando AOSP y me fui como Head of Mobile Development.",
       "edu.h": "Educaci&oacute;n",
       "edu.degree": "Ingeniero Civil en Computaci&oacute;n. Major en Ingenier&iacute;a de Software, minor en Data Science &amp; Analytics.",
       "edu.thesis": "Tesis: Pipeline NLP para detecci&oacute;n de contenido peligroso en tablets infantiles &mdash; desplegado en producci&oacute;n en SoyMomo.",
@@ -768,9 +864,9 @@
       "stack.int.h": "Integraciones",
       "stack.int": '<strong class="text-neutral-800 dark:text-neutral-300">Construye el pipeline, no el wrapper.</strong> Las APIs de terceros se rompen, cambian y limitan requests. Invierto en infraestructura de sync resiliente &mdash; reintentos, idempotencia, webhooks en tiempo real &mdash; en vez de wrappers finos que se caen en producci&oacute;n.',
       "stack.ai.h": "Desarrollo Asistido por IA",
-      "stack.ai.p1": '<strong class="text-neutral-800 dark:text-neutral-300">Early adopter, usuario diario desde el d&iacute;a uno.</strong> Empec&eacute; con GitHub Copilot para scaffolding, luego ChatGPT el d&iacute;a que sali&oacute;. Me mov&iacute; a Cursor cuando se hizo p&uacute;blico, y ahora uso un workflow cross-model entre Claude Code y Codex que he refinado en los &uacute;ltimos dos meses.',
-      "stack.ai.p2": "Mi flujo actual: planeo una feature en Claude Code, paso ese plan a Codex para refinarlo, luego paso el plan refinado a una sesi&oacute;n fresca de Claude Code para implementaci&oacute;n &mdash; forz&aacute;ndolo a reconstruir contexto desde cero solo con el plan. Despu&eacute;s de la implementaci&oacute;n, Codex revisa edge cases y correctitud. Sigo iterando entre ambos hasta que Codex me dice que la feature est&aacute; lista para ship.",
-      "stack.ai.p3": "No uso frameworks de prompts de moda &mdash; creo que son muletas para gente que no es lo suficientemente t&eacute;cnica para promptear bien por su cuenta. Vanilla Claude Code con su planning interno es suficiente si sabes lo que est&aacute;s construyendo. El leverage viene de entender el c&oacute;digo profundamente y usar IA para avanzar m&aacute;s r&aacute;pido en la implementaci&oacute;n, no de externalizar el pensamiento.",
+      "stack.ai.p1": '<strong class="text-neutral-800 dark:text-neutral-300">Usuario diario desde el d&iacute;a uno.</strong> Empec&eacute; con GitHub Copilot, despu&eacute;s ChatGPT el d&iacute;a que sali&oacute;, despu&eacute;s Cursor. Hoy es casi todo Claude Code.',
+      "stack.ai.p2": "Varias sesiones a la vez, cada una en su propio worktree, con skills y MCPs para todo, desde la base de datos hasta Cloudflare. Mi trabajo ahora es decidir qu&eacute; construir y revisar que de verdad funcione.",
+      "stack.ai.p3": "El leverage sigue viniendo de entender el c&oacute;digo. La IA te mueve m&aacute;s r&aacute;pido por la implementaci&oacute;n. No piensa por ti.",
       "footer.built": 'Construido con HTML y Tailwind. <a href="https://github.com/josefeliuf/josefeliuf.github.io" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors underline underline-offset-2 decoration-neutral-300 dark:decoration-neutral-700">C&oacute;digo fuente</a>',
     };
 
